@@ -27,11 +27,6 @@ func Init() (err error) {
 
 }
 
-func main() {
-	if err := initClient(); err != nil {
-		fmt.Printf("init redis client failed, err: %v\n", err)
-	}
-	defer rdb.Close()
-	fmt.Println("connect to Redis success!")
-
+func Close() {
+	rdb.Close()
 }
